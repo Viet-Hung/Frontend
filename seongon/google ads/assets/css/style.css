@@ -1,0 +1,991 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main-section {
+    /* Giữ lại padding chung cho các section, có thể điều chỉnh nếu cần */
+    padding: 100px 0;
+    /* Điều chỉnh padding trên dưới cho phù hợp */
+}
+
+#section1 {
+    margin: 0 100px;
+}
+
+/* Style cho phần 1 */
+#section1 .main-container {
+    /* Thêm #section1 để chỉ áp dụng cho container bên trong phần 1 */
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+#section1 .row {
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    flex-wrap: wrap;
+    /* Đảm bảo responsive khi màn hình nhỏ */
+}
+
+#section1 .text-content {
+    /* Thêm #section1 để chỉ áp dụng cho text-content bên trong phần 1 */
+    padding: 20px;
+    text-align: left;
+}
+
+#section1 .text-content h1 {
+    /* Thêm #section1 để chỉ áp dụng cho h1 bên trong phần 1 */
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+    /* Màu chữ mặc định, có thể bị ghi đè bởi style inline */
+}
+
+#section1 .text-content p {
+    /* Thêm #section1 để chỉ áp dụng cho p bên trong phần 1 */
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #333;
+    /* Màu chữ mặc định, có thể bị ghi đè bởi style inline */
+}
+
+#section1 .btn-primary {
+    /* Thêm #section1 để chỉ áp dụng cho button bên trong phần 1 */
+    background-color: #f23063;
+    border-color: #f23063;
+    padding: 10px 30px;
+    font-size: 1.2em;
+    border-radius: 15em;
+    text-align: left;
+    /* Đảm bảo nút cũng được căn trái */
+    display: inline-block;
+    /* Để text-align: left có tác dụng */
+}
+
+#section1 .image-content {
+    /* Thêm #section1 để chỉ áp dụng cho image-content bên trong phần 1 */
+    position: relative;
+    text-align: center;
+}
+
+#section1 .image-content img {
+    /* Thêm #section1 để chỉ áp dụng cho img bên trong phần 1 */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style cho phần 2 */
+#section2 .row {
+    display: flex;
+    /* Kích hoạt Flexbox cho hàng */
+    flex-wrap: wrap;
+    /* Cho phép các box xuống dòng khi không đủ không gian */
+}
+
+#section2 .feature-box {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    /* Thêm bóng nhẹ cho box */
+    padding: 20px;
+    /* Thêm padding bên trong box */
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    margin: 20px;
+    flex: 1;
+}
+
+#section2 .feature-box h3 {
+    font-weight: bold;
+    /* In đậm tiêu đề box */
+}
+
+/* Bổ sung CSS cho phần 2 */
+#section2 .col-md-4 {
+    display: flex;
+    /* Kích hoạt Flexbox cho cột */
+    flex-direction: column;
+    /* Sắp xếp nội dung trong cột theo chiều dọc */
+    padding: 20px;
+    /* Giữ lại padding cho mỗi cột */
+    margin-bottom: 20px;
+    /* Thêm margin bottom để có khoảng cách giữa các hàng nếu cần */
+}
+
+#section2 ul {
+    margin-top: 15px;
+}
+
+#section2 ul li {
+    margin-bottom: 10px;
+}
+
+/* Style cho phần 3 */
+#section3 .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+#section3 .col-md-4 {
+    padding: 15px;
+    /* Giữ lại padding cho cột */
+    margin-bottom: 20px;
+    /* Giữ lại margin bottom cho cột */
+    display: flex;
+    flex-direction: column;
+}
+
+.campaign-item {
+    height: 100%;
+    /* Đảm bảo campaign-item cũng có chiều cao */
+}
+
+.campaign-item-inner {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Đảm bảo inner cũng có chiều cao */
+    transition: transform 0.3s ease;
+}
+
+.campaign-item-inner .front {
+    padding: 30px;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    /* Để front chiếm hết không gian */
+}
+
+.campaign-item-inner .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f23063;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.campaign-item:hover .campaign-item-inner .front {
+    opacity: 0;
+}
+
+.campaign-item:hover .campaign-item-inner .back {
+    opacity: 1;
+}
+
+.campaign-item-inner i.fa {
+    margin-bottom: 10px;
+}
+
+.campaign-item-inner h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+    /* color: #333; */
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.campaign-item-inner h4.back {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.campaign-item-inner p {
+    font-size: 0.9em;
+    /* color: #333; */
+    text-align: center;
+    margin-bottom: 0;
+    /* Loại bỏ margin bottom mặc định */
+}
+
+/* .campaign-item-inner .back {
+    color: white;
+} */
+
+.campaign-item-inner p.back {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+}
+
+.campaign-item-inner a.btn {
+    background-color: #f23063;
+    color: #fff;
+    border-color: #fff;
+    margin-top: 15px;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.campaign-item-inner a.btn i {
+    margin: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Style cho phần 4 */
+#section4 {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+#section4 .container {
+    /* Bạn có thể thêm style cho container nếu cần */
+    background-color: #f9f9f9;
+}
+
+#section4 h2 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+#section4 .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Căn giữa các cột */
+}
+
+#section4 .col-md-4 {
+    padding: 15px;
+    text-align: center;
+    display: flex;
+}
+
+.package-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Quan trọng: Đẩy phần tử cuối xuống đáy */
+    align-items: center;
+    margin: 20px;
+    max-width: 370px;
+    /* Điều chỉnh độ rộng tối đa của gói dịch vụ */
+}
+
+.package-title {
+    font-size: 1.2em;
+    /* Điều chỉnh kích thước font */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    /* Điều chỉnh margin bottom */
+    text-align: center;
+}
+
+.package-icon {
+    font-size: 3em;
+    color: #007bff;
+    margin-bottom: 15px;
+    /* Giảm margin-bottom của icon */
+}
+
+.package-box p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.package-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.package-link {
+    color: #007bff;
+    margin-bottom: 5px;
+    display: block;
+    text-align: center;
+}
+
+.package-box .btn-default {
+    background-color: #FF2B80;
+    border-color: #ccc;
+    padding: 15px 50px;
+    color: #fff;
+    border-radius: 40px;
+    font-size: 1em;
+    /* Điều chỉnh kích thước font nút */
+    align-self: center;
+    width: 100%;
+    transition: none;
+    /* Loại bỏ transition mặc định nếu có */
+}
+
+.package-box .btn-default:hover {
+    background-color: #FF2B80;
+    /* Giữ nguyên màu nền khi hover */
+    border-color: #ccc;
+    /* Giữ nguyên màu viền khi hover */
+    cursor: pointer;
+    /* Vẫn giữ con trỏ chuột là pointer */
+}
+
+/* Bổ sung CSS cho phần 5 (cập nhật) */
+#section5 .col-md-6 {
+    padding: 15px;
+}
+
+#section5 #advertising-formats-slider img {
+    max-width: 100%;
+    /* Đảm bảo hình ảnh không tràn ra ngoài cột */
+    height: auto;
+}
+
+/* Bổ sung CSS cho phần 6 */
+/* #section6 .col-md-4 { */
+/* padding: 15px; */
+/* Thêm padding giữa các cột */
+/* } */
+
+/* Section 6 Styles */
+#section6 .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px;
+    align-items: stretch;
+    /* Thêm hoặc đảm bảo thuộc tính này đang được sử dụng */
+}
+
+#section6 .col-md-4 {
+    flex: 0 0 30%;
+    /* Giảm kích thước cột xuống 30% để vừa 3 cột trên một hàng */
+    /* display: flex; */
+    /* flex-direction: column; */
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    /* Loại bỏ padding giữa các cột */
+}
+
+#section6 .feature-box {
+    width: 100%;
+    /* Đảm bảo ô chiếm toàn bộ chiều rộng cột */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Căn giữa nội dung theo chiều dọc */
+    height: 400px;
+}
+
+#section6 .feature-box h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#section6 .feature-box p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#section6 .feature-box .btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+#section6 .feature-box .btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+#section6 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Đảm bảo hình ảnh không bị méo */
+    /* border-radius: 10px; */
+    margin: 0;
+}
+
+#section6 .row.align-items-center {
+    align-items: stretch !important;
+}
+
+/* Bổ sung CSS cho phần 7 */
+#section7 .fa-arrow-right {
+    margin: 0 20px;
+    /* Thêm khoảng cách giữa các mũi tên và khối */
+}
+
+/* Bổ sung CSS cho phần 8 */
+#section8 .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#section8 {
+    padding: 80px 0;
+    background-image: url('https://seongon.com/wp-content/uploads/2022/11/Section-7-1.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    /* Thêm chiều cao cố định nếu cần */
+    /* height: 600px; */
+}
+
+/* Style chung cho phần 9 */
+#section9 {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+    /* Màu nền xám nhạt */
+}
+
+#section9 .container {
+    max-width: 1140px;
+    /* Điều chỉnh độ rộng container nếu cần */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+#section9 h2 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#section9 p {
+    color: #777;
+    margin-bottom: 40px;
+    font-size: 1em;
+    text-align: center;
+}
+
+#section9 img[alt="Quy trình làm việc"] {
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Style cho các tab (chúng ta đã thêm inline style, có thể không cần ở đây) */
+.process-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+h3.tab-button {
+    /* Các style cho button (giờ áp dụng cho h3 có class tab-button) */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0;
+    /* Loại bỏ margin mặc định của thẻ h3 nếu cần */
+}
+
+h3.tab-button.active {
+    background-color: #e0e0e0;
+}
+
+h3.tab-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Style cho nội dung tab */
+.process-content {
+    /* background-color: #fff;
+    padding: 30px;
+    border-radius: 5px; */
+    text-align: left;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content .row {
+    align-items: center;
+}
+
+.tab-content .col-md-6:first-child {
+    text-align: center;
+}
+
+.tab-content img {
+    max-width: 500px;
+    /* Đặt kích thước tối đa bạn muốn, ví dụ 300px */
+    height: auto;
+    /* Để đảm bảo tỷ lệ khung hình */
+    margin-bottom: 20px;
+}
+
+.tab-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #555;
+    margin-bottom: 10px;
+    /* Thêm margin bottom cho các ul */
+}
+
+.tab-content ul li {
+    margin-bottom: 5px;
+}
+
+/* Bổ sung CSS cho phần 10 */
+#section10 .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Style cho phần 11 */
+#section11 .project-card:nth-child(3) .project-card>div {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    bottom: auto;
+    /* Override bottom positioning */
+    right: auto;
+    /* Override right positioning */
+}
+
+#section11 .project-card:nth-child(3) .project-card h4 {
+    font-size: 1em;
+    color: #f23063;
+    /* Màu đỏ cho chữ BRANDY */
+    margin-bottom: 5px;
+}
+
+#section11 .project-card:nth-child(3) .project-card p:first-of-type {
+    /* Style cho "TĂNG TRƯỞNG" */
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#section11 .project-card:nth-child(3) .project-card h3 {
+    /* Style cho "TỶ LỆ QUALIFY LEAD" */
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#section11 .project-card:nth-child(3) .project-card h2 {
+    /* Style cho "32%" */
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #f23063;
+    margin-bottom: 10px;
+}
+
+#section11 .project-card:nth-child(3) .project-card p:last-of-type {
+    /* Style cho "NHỜ CHIẾN DỊCH..." */
+    font-size: 0.8em;
+    color: #555;
+}
+
+/* Các style chung cho project card có thể đã có, nếu chưa thì bạn có thể thêm */
+#section11 .project-card {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+}
+
+#section11 .project-card>div {
+    /* Style cho phần nội dung bên trong card */
+    padding: 20px;
+    text-align: center;
+}
+
+#section11 .project-card:not(:nth-child(3))>div {
+    /* Style cho nội dung các card khác trừ card thứ 3 */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+#section11 .project-card h3 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#section11 .project-card p {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+#section11 .project-card p.special-text {
+    /* Class đặc biệt cho dòng 33.145 - 150% */
+    font-size: 1em;
+    color: #f23063;
+}
+
+#section11 .text-center .btn-outline-danger {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #f23063;
+    color: #f23063;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#section11 .text-center .btn-outline-danger:hover {
+    background-color: #f23063;
+    color: white;
+}
+
+/* Bổ sung CSS cho phần 12 */
+/* Thêm style cho phần 12 */
+#section12 .testimonial-slider-container {
+    position: relative;
+    overflow: hidden;
+}
+
+#section12 .testimonial-slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+#section12 .testimonial-slide {
+    flex: 0 0 calc(100% / 3);
+    /* Hiển thị 3 slide cùng lúc */
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#section12 .testimonial-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
+    position: relative;
+}
+
+#section12 .testimonial-quote {
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    position: relative;
+    max-height: 100px;
+    overflow: hidden;
+}
+
+#section12 .testimonial-quote::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+}
+
+#section12 .btn-xem-them {
+    background-color: transparent;
+    color: #f23063;
+    border: none;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#section12 .testimonial-rating {
+    color: #ffc107;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#section12 .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+#section12 .testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f23063;
+}
+
+#section12 .testimonial-author .author-name {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#section12 .testimonial-author .author-title {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+#section12 .testimonial-author .author-company {
+    font-size: 0.9em;
+    color: #f23063;
+    font-weight: bold;
+}
+
+#section12 .slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2em;
+    color: #f23063;
+    outline: none;
+}
+
+#section12 .prev-arrow {
+    left: 10px;
+}
+
+#section12 .next-arrow {
+    right: 10px;
+}
+
+#section12 .slider-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#section12 .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#section12 .dot.active {
+    background-color: #f23063;
+}
+
+#section12 .btn-xem-them {
+    background-color: #f23063;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    outline: none;
+}
+
+#section12 .testimonial-box .testimonial-content {
+    max-height: 150px;
+    /* Điều chỉnh chiều cao tối đa ban đầu tùy theo bạn muốn hiển thị bao nhiêu dòng */
+    overflow: hidden;
+    position: relative;
+    /* Để có thể định vị nút "Xem thêm" */
+}
+
+#section12 .testimonial-box .testimonial-content::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    /* Chiều cao của lớp phủ gradient */
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    /* Tạo hiệu ứng mờ dần */
+}
+
+#section12 .testimonial-box:hover .testimonial-content {
+    max-height: none;
+    /* Khi hover, hiển thị toàn bộ nội dung */
+    overflow: visible;
+}
+
+#section12 .testimonial-box:hover .testimonial-content::after {
+    display: none;
+    /* Ẩn lớp phủ gradient khi hover */
+}
+
+#section12 .testimonial-box .btn-xem-them {
+    background-color: #f23063;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    outline: none;
+    position: absolute;
+    /* Định vị nút "Xem thêm" */
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#section12 .testimonial-box:hover .btn-xem-them {
+    display: none;
+
+    /* Ẩn nút "Xem thêm" khi hover */
+    /* Hoặc bạn có thể để lại nếu muốn hiển thị nút này khi hover */
+}
+
+/* Style cho phần 13 */
+#section13 {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+#section13 .container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#section13 h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+#section13 .faq-item {
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#section13 .faq-question {
+    padding: 15px;
+    cursor: pointer;
+    position: relative;
+    color: #333;
+    font-weight: bold;
+}
+
+#section13 .faq-question:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #555;
+}
+
+#section13 .faq-question.active:after {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid #555;
+}
+
+#section13 .faq-answer {
+    padding: 15px;
+    background-color: #f9f9f9;
+    color: #555;
+    display: none;
+}
+
+#section13 .toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+}
+
+.faq-question:hover {
+    background-color: #f9f9f9;
+}
+
+/* Thêm style cho input và textarea khi focus ở phần 14 */
+#section14 input:focus,
+#section14 textarea:focus {
+    color: #333;
+    /* Đổi màu chữ thành màu đen hoặc màu bạn muốn */
+    outline: none;
+    /* Loại bỏ viền focus mặc định của trình duyệt (tùy chọn) */
+    border-color: #f23063;
+    /* Đổi màu viền khi focus (tùy chọn) */
+}
+
+/* Style cho placeholder ở phần 14 */
+#section14 input:focus,
+#section14 textarea:focus {
+    color: #333;
+    /* Đổi màu chữ thành màu đen hoặc màu bạn muốn */
+    outline: none;
+    /* Loại bỏ viền focus mặc định của trình duyệt (tùy chọn) */
+    border-color: #f23063;
+    /* Đổi màu viền khi focus (tùy chọn) */
+}
+
+/* Style cho placeholder */
+#section14 input::placeholder,
+#section14 textarea::placeholder {
+    color: #777;
+    /* Màu mặc định của placeholder */
+}

@@ -1,0 +1,30 @@
+/*
+Theme Name:     AdsWeb
+Theme URI:      https://adsweb.vn/gallery/divi/
+Description:    Divi Child Theme
+Author:         AdsWeb
+Author URI:     https://adsweb.vn
+Template:       Divi
+Version:        1.0.0
+*/
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+body {
+    font-weight: 400
+}
+
+/* @media (max-width: 980px){
+    .et_pb_menu .et_pb_menu__menu {
+        display: block;
+        margin-top: 10px;
+    }
+    .et_mobile_nav_menu {
+        display:none !important;
+    }
+}
+.et_pb_menu .et_pb_menu__menu>nav>ul>li>ul {
+    top: calc(100% - 1px);
+    left: auto;
+	right:0;
+} */
